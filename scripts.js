@@ -47,6 +47,11 @@ function clickButton() {
         return
     }
 
+    if (buttonValue === "delete") {
+        deleteLast()
+        return
+    }
+
     if (buttonClass === "key operator") {
         
         if (buttonValue === "equal") {
@@ -72,7 +77,7 @@ function clickButton() {
                 }
                 firstNumber = displayValue = result
                 updateDisplay()
-                secondNumber = null
+                // secondNumber = null
             }
         }
 
@@ -98,4 +103,12 @@ function clear() {
     secondNumber = null
     displayValue = ""
     updateDisplay()
+}
+
+function deleteLast() {
+      if (displayValue) {
+        console.log("display is non-empty")
+        displayValue = displayValue.slice(0, -1)
+        updateDisplay()
+      }
 }
