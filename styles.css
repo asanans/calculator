@@ -15,6 +15,7 @@ body {
     box-shadow: inset 4px 4px #ffed84ad;
     font-size: 24px;
     font-family: 'Courier New', Courier, monospace;
+    min-height: 1.2em;
 }
 
 .container {

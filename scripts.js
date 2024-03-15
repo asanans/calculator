@@ -13,11 +13,11 @@ function subtract(a, b) {
 }
 
 function multiply(a, b) {
-    return b ? a * b : a
+    return !(b === undefined) ? a * b : a
 }
 
 function divide(a, b) {
-    return b ? a / b : a
+    return !(b === undefined) ? a / b : a
 }
 
 function operate(operator, a, b) {
@@ -37,6 +37,11 @@ function clickButton() {
     
     // if user clicks anywhere on the keypad that isn't a button, i.e. clicks on a target that has no "value" attribute, then end function
     if (!buttonValue) {return}
+
+    if (buttonValue === "clear") {
+        clear()
+        return
+    }
 
     if (buttonClass === "key operator") {
         
@@ -79,4 +84,11 @@ function clickButton() {
 
 function updateDisplay() {
     displayEl.textContent = displayValue
+}
+
+function clear() {
+    firstNumber = null
+    secondNumber = null
+    displayValue = ""
+    updateDisplay()
 }
