@@ -64,29 +64,30 @@ function clickButton() {
         if (buttonValue === "equal") {
             if (currentOperator === "equal" || !currentOperator) { return }
             secondNumber = displayValue ? Number(displayValue) : null
-            console.log(currentOperator)
-            console.log(firstNumber)
-            console.log(secondNumber)
+            // console.log(currentOperator)
+            // console.log(firstNumber)
+            // console.log(secondNumber)
             result = operate(currentOperator, firstNumber, secondNumber)
-            console.log(result)
+            // console.log(result)
             firstNumber = displayValue = result
             updateDisplay()
             // secondNumber = null
         } else {
             if (!firstNumber) {
                 firstNumber = Number(displayValue)
-                console.log("first num was undefined so we defined it")
-                console.log(`the first num ${firstNumber}`)
+                // console.log("first num was undefined so we defined it")
+                // console.log(`the first num ${firstNumber}`)
             } else {
                 secondNumber = displayValue ? Number(displayValue) : null
                 if (currentOperator != "equal") {
-                    console.log(currentOperator)
-                    console.log(firstNumber)
-                    console.log(secondNumber)
+                    // console.log(currentOperator)
+                    // console.log(firstNumber)
+                    // console.log(secondNumber)
                     result = operate(currentOperator, firstNumber, secondNumber)
+                    firstNumber = displayValue = result
+                    updateDisplay()
                 }
-                firstNumber = displayValue = result
-                updateDisplay()
+
                 // secondNumber = null
             }
         }
@@ -99,7 +100,6 @@ function clickButton() {
 
     if (currentOperator === "equal") {
         firstNumber = null
-        // console.log("here is the bug")
     }
 
     displayValue += buttonValue
@@ -119,19 +119,19 @@ function clear() {
 
 function deleteLast() {
       if (displayEl.textContent) {
-        console.log("display is non-empty")
         displayValue = Number(displayEl.textContent.slice(0, -1))
         firstNumber = displayValue
-        console.log(firstNumber)
         updateDisplay()
         firstNumber = null
         secondNumber = null
       }
 }
 
-function changeSign(a) {
-    if (displayValue){
-        displayValue = displayValue * -1
+function changeSign() {
+    if (displayEl.textContent){
+        displayValue = Number(displayEl.textContent) * -1
+        firstNumber = null
+        secondNumber = null
         updateDisplay()
     }
     
