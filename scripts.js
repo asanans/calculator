@@ -17,6 +17,10 @@ function multiply(a, b) {
 }
 
 function divide(a, b) {
+    if (b === 0) {
+        alert("Hold up! You cannot divide by 0!")
+        return
+    }
     return !(b === null) ? a / b : a
 }
 
