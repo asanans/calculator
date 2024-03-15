@@ -56,6 +56,11 @@ body {
     border: 1px solid hsla(0, 1%, 67%, 0.51);
 }
 
+.key:active { 
+    filter: none; 
+    transform: translate(4px, 4px); 
+} 
+
 .large {
     flex: 2.5
 }
