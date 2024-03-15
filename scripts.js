@@ -13,11 +13,11 @@ function subtract(a, b) {
 }
 
 function multiply(a, b) {
-    return !(b === undefined) ? a * b : a
+    return !(b === null) ? a * b : a
 }
 
 function divide(a, b) {
-    return !(b === undefined) ? a / b : a
+    return !(b === null) ? a / b : a
 }
 
 function operate(operator, a, b) {
@@ -47,7 +47,7 @@ function clickButton() {
         
         if (buttonValue === "equal") {
             if (currentOperator === "equal" || !currentOperator) { return }
-            secondNumber = displayValue ? Number(displayValue) : undefined
+            secondNumber = displayValue ? Number(displayValue) : null
             // console.log(currentOperator)
             // console.log(firstNumber)
             // console.log(secondNumber)
@@ -59,7 +59,7 @@ function clickButton() {
             if (!firstNumber) {
                 firstNumber = Number(displayValue)
             } else {
-                secondNumber = displayValue ? Number(displayValue) : undefined
+                secondNumber = displayValue ? Number(displayValue) : null
                 if (currentOperator != "equal") {
                     console.log(currentOperator)
                     console.log(firstNumber)
