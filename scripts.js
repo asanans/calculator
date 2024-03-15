@@ -47,7 +47,7 @@ function clickButton() {
         
         if (buttonValue === "equal") {
             if (currentOperator === "equal" || !currentOperator) { return }
-            secondNumber = displayValue ? Number(displayValue) : null
+            secondNumber = displayValue ? Number(displayValue) : undefined
             // console.log(currentOperator)
             // console.log(firstNumber)
             // console.log(secondNumber)
@@ -59,13 +59,16 @@ function clickButton() {
             if (!firstNumber) {
                 firstNumber = Number(displayValue)
             } else {
-                secondNumber = Number(displayValue)
+                secondNumber = displayValue ? Number(displayValue) : undefined
                 if (currentOperator != "equal") {
+                    console.log(currentOperator)
+                    console.log(firstNumber)
+                    console.log(secondNumber)
                     result = operate(currentOperator, firstNumber, secondNumber)
                 }
                 firstNumber = displayValue = result
                 updateDisplay()
-                // secondNumber = null
+                secondNumber = null
             }
         }
 
