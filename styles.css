@@ -45,7 +45,7 @@ body {
     flex: 1;
     background-color: white;
     border-radius: 20px;
-    margin: 10px;
+    margin: 8px;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -53,4 +53,8 @@ body {
     filter: drop-shadow(4px 4px #c9c9c9);
     font-size: 20px;
     border: 1px solid hsla(0, 1%, 67%, 0.51);
+}
+
+.large {
+    flex: 2.5
 }
